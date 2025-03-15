@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+pnpm tsup
+cp package.json dist/
+pnpm pack
+cd dist
+tar -xzf *.tgz
+cp package/package.json .
+rm -fr package *.tgz
