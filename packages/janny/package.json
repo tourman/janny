@@ -5,7 +5,9 @@
   "license": "MIT",
   "author": "tourman",
   "scripts": {
+    "build": "pnpm tsup",
     "lint": "pnpm eslint",
+    "pipe:build": "pnpm build",
     "pipe:lint": "pnpm lint"
   },
   "devDependencies": {
@@ -14,6 +16,7 @@
     "eslint": "^9.22.0",
     "globals": "^16.0.0",
     "jest": "^29.7.0",
+    "tsup": "^8.4.0",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.26.1"
   },
