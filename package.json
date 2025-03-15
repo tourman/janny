@@ -1,13 +1,14 @@
 {
-  "author": "tourman",
   "license": "MIT",
-  "packageManager": "pnpm@10.6.1",
+  "author": "tourman",
+  "scripts": {
+    "prepare": "husky"
+  },
   "devDependencies": {
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
-    "prettier": "^3.5.3"
+    "prettier": "^3.5.3",
+    "sort-package-json": "^3.0.0"
   },
-  "scripts": {
-    "prepare": "husky"
-  }
+  "packageManager": "pnpm@10.6.1"
 }
