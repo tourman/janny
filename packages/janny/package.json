@@ -4,6 +4,9 @@
   "keywords": [],
   "license": "MIT",
   "author": "tourman",
+  "scripts": {
+    "lint": "pnpm eslint"
+  },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
     "eslint": "^9.22.0",
