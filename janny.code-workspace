@@ -1,6 +1,9 @@
 {
   "folders": [
     {
+      "path": "packages/janny",
+    },
+    {
       "path": ".",
       "name": "root",
     },

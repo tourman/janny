@@ -12,6 +12,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
 
+  packages/janny: {}
+
 packages:
 
   prettier@3.5.3:
