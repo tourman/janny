@@ -3,5 +3,8 @@
   "version": "0.0.1",
   "author": "tourman",
   "license": "MIT",
-  "packageManager": "pnpm@10.6.1"
+  "packageManager": "pnpm@10.6.1",
+  "devDependencies": {
+    "prettier": "^3.5.3"
+  }
 }
