@@ -1,4 +1,8 @@
 {
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "importOrderCaseInsensitive": true,
+  "importOrderSortSpecifiers": true,
+  "importOrderSideEffects": false,
   "semi": true,
   "trailingComma": "all",
   "singleQuote": true
