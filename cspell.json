@@ -1,4 +1,13 @@
 {
   "ignorePaths": ["**/pnpm-lock.yaml"],
-  "words": ["tourman", "janny", "trivago", "lintstaged", "lintstagedrc", "tsup"]
+  "words": [
+    "tourman",
+    "janny",
+    "trivago",
+    "lintstaged",
+    "lintstagedrc",
+    "tsup",
+    "xtrace",
+    "mktemp"
+  ]
 }

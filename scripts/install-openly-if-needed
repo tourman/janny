@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+mkdir -p .vale/styles/
+cd .vale/styles/
+if test -d Openly; then
+  echo "The style exists"
+  exit
+fi
+wget https://github.com/ChrisChinchilla/Openly/releases/download/0.4.4/Openly.zip
+unzip Openly.zip

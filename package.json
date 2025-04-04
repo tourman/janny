@@ -6,7 +6,10 @@
     "pipe:prettier": "prettier -cu .",
     "pipe:spell": "cspell --quiet --gitignore .",
     "pipe:spj": "git ls-files | grep package.json | sort-package-json --check",
-    "prepare": "husky"
+    "prepipe:vale": "vale sync &>/dev/null && scripts/install-openly-if-needed",
+    "pipe:vale": "git ls-files | pnpm vale",
+    "prepare": "husky",
+    "vale": "node scripts/vale-filter-files.js"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
