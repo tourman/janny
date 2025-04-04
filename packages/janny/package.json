@@ -11,13 +11,32 @@
     "lint": "pnpm eslint",
     "pipe:build": "pnpm build",
     "pipe:lint": "pnpm lint",
-    "pipe:tsc": "tsc -p tsconfig.json"
+    "pipe:test": "CI=true jest --passWithNoTests",
+    "pipe:tsc": "tsc -p tsconfig.json",
+    "test": "jest --watch"
+  },
+  "jest": {
+    "moduleDirectories": [
+      "src",
+      "src/utils",
+      "node_modules"
+    ],
+    "moduleNameMapper": {
+      "lodash-es": "lodash"
+    },
+    "modulePathIgnorePatterns": [
+      "<rootDir>/dist/"
+    ]
   },
   "devDependencies": {
-    "@eslint/compat": "^1.2.8",
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-typescript": "^7.26.0",
+    "@eslint/compat": "^1.2.7",
     "@eslint/js": "^9.22.0",
     "@types/jest": "^29.5.14",
     "@types/node": "^20.17.30",
+    "babel-jest": "^29.7.0",
     "eslint": "^9.22.0",
     "eslint-plugin-no-relative-import-paths": "^1.6.1",
     "globals": "^16.0.0",
