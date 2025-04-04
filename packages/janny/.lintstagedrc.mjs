@@ -1,6 +1,18 @@
-import base, { redundant } from '../../.lintstagedrc.mjs';
+import {
+  cspell,
+  exclude,
+  map as parentMap,
+  prettier,
+} from '../../.lintstagedrc.mjs';
+
+const lint = 'pnpm lint --fix';
+
+export const map = {
+  ...parentMap,
+  '*.{js,mjs,cjs,ts}': [cspell, lint, prettier],
+};
 
 export default {
-  '*.{js,mjs,cjs,ts}': ['pnpm lint --fix', ...redundant],
-  ...base,
+  ...map,
+  ...exclude(map),
 };
