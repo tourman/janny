@@ -1,4 +1,6 @@
+export const redundant = ['cspell --gitignore', 'prettier -wu'];
+
 export default {
-  '*': ['prettier -wu'],
-  'package.json': ['sort-package-json', 'prettier -wu'],
+  '*': redundant,
+  'package.json': ['sort-package-json', ...redundant],
 };
