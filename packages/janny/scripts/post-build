@@ -1,7 +1,6 @@
 #!/bin/bash
 
 set -e
-pnpm tsup
 cp package.json dist/
 pnpm pack
 cd dist

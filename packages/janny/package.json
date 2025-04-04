@@ -6,7 +6,8 @@
   "author": "tourman",
   "main": "src/index.ts",
   "scripts": {
-    "build": "./scripts/build",
+    "build": "tsup --onSuccess ./scripts/post-build",
+    "dev": "pnpm build --watch",
     "lint": "pnpm eslint",
     "pipe:build": "pnpm build",
     "pipe:lint": "pnpm lint"
