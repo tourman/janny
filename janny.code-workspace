@@ -8,4 +8,9 @@
       "name": "root",
     },
   ],
+  "settings": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+    },
+  },
 }
