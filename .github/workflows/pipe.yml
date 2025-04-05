@@ -1,0 +1,66 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  spell:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-pipe
+      - run: pnpm -r pipe:spell
+
+  vale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-pipe
+      - run: wget https://github.com/errata-ai/vale/releases/download/v3.11.1/vale_3.11.1_Linux_64-bit.tar.gz
+      - run: tar xzf vale*
+      - run: mkdir -p .bin
+      - run: mv vale .bin
+      - run: export PATH=$PATH:$(pwd)/.bin
+      - run: pnpm -r pipe:vale
+
+  spj:
+    name: 'Sort `package.json`'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-pipe
+      - run: pnpm -r pipe:spj
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-pipe
+      - run: pnpm -r pipe:test
+
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-pipe
+      - run: pnpm -r pipe:prettier
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-pipe
+      - run: pnpm -r pipe:lint
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-pipe
+      - run: pnpm -r pipe:build
+
+  tsc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-pipe
+      - run: pnpm -r pipe:tsc
