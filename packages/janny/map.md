@@ -1,0 +1,16 @@
+- [x] `ConvertToArguments`
+  - [x] `ConvertToDimensionArguments`
+    - [ ] `OrderSpaceKeys`
+  - [x] `ConvertToRestrictionArguments`
+    - [x] `GetCoordinates`
+    - [x] `GetTokenNumberByIndex`. See the token converter.
+    - [x] `GetTokenLetterByCardinality`. See the token converter.
+- [x] `Call`
+- [x] `ConvertToCases`
+  - [x] `ConvertTupleToLevelMap`
+    - [x] `LineToLevels`
+      - [x] `GetCoordinatesByToken`. See the token converter.
+  - [ ] `ConvertToCaseInput`
+- [x] `Save`
+  - [x] `SaveToFile`
+  - [x] `GetContent`
