@@ -3,11 +3,14 @@ import type * as Entities from 'entities';
 import invariant from 'invariant';
 import { zip } from 'lodash-es';
 
-export interface LineToLevels<S, L> {
+export interface LineToLevels<S extends Entities.Space<unknown, L>, L> {
   (space: S, line: string[]): L[] | Promise<L[]>;
 }
 
-export interface ReduceDimensionsToDefaultLevelMapFactoryOptions<S, L> {
+export interface ReduceDimensionsToDefaultLevelMapFactoryOptions<
+  S extends Entities.Space<unknown, L>,
+  L,
+> {
   lineToLevels: LineToLevels<S, L>;
 }
 
