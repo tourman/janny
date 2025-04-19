@@ -9,6 +9,8 @@
     "tsup",
     "xtrace",
     "mktemp",
-    "DTO"
+    "DTO",
+    "subdimension",
+    "subdimensions"
   ]
 }
