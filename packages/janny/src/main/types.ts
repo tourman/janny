@@ -1,4 +1,5 @@
 import type * as Entities from 'entities';
+import { type CaseDTO as GenericCaseDTO } from 'transport/CaseDTO/CaseDTO';
 import { type NestedSpaceDTO } from 'transport/NestedSpaceDTO/NestedSpaceDTO';
 
 export type Key = string;
@@ -27,3 +28,10 @@ export function isPan(pan: unknown): pan is Pan {
 export type CaseDTOInput = NestedSpaceDTO<Level>;
 
 export type SpaceDTO = NestedSpaceDTO<Pan>;
+
+export type CaseDTO<CaseDTOOutput> = GenericCaseDTO<
+  CaseDTOInput,
+  CaseDTOOutput
+>;
+
+export type CaseDTOs<CaseDTOOutput> = Array<CaseDTO<CaseDTOOutput>>;
