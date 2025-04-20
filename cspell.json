@@ -11,6 +11,7 @@
     "mktemp",
     "DTO",
     "subdimension",
-    "subdimensions"
+    "subdimensions",
+    "DTO"
   ]
 }

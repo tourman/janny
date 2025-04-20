@@ -1,10 +1,16 @@
 import type * as Entities from 'entities';
 import { type CaseDTO as GenericCaseDTO } from 'transport/CaseDTO/CaseDTO';
+import {
+  type ExclusionDTO as GenericExclusionDTO,
+  type ExclusionPanDTO as GenericExclusionPanDTO,
+} from 'transport/ExclusionDTO/ExclusionDTO';
 import { type NestedSpaceDTO } from 'transport/NestedSpaceDTO/NestedSpaceDTO';
 
 export type Key = string;
 
 export type Level = string | number;
+
+export type Dimension = Iterable<Level>;
 
 export type Space = Entities.Space<Key, Level>;
 
@@ -17,7 +23,7 @@ export type CaseOutput = CaseInput;
 export const idKey = Symbol('idKey');
 
 export interface Pan {
-  (): Level[];
+  (): Dimension;
   [idKey]: true;
 }
 
@@ -35,3 +41,9 @@ export type CaseDTO<CaseDTOOutput> = GenericCaseDTO<
 >;
 
 export type CaseDTOs<CaseDTOOutput> = Array<CaseDTO<CaseDTOOutput>>;
+
+export type ExclusionPanDTO = GenericExclusionPanDTO<Pan>;
+
+export type ExclusionDTO = GenericExclusionDTO<Pan>;
+
+export type ExclusionDTOs = Iterable<ExclusionDTO>;
