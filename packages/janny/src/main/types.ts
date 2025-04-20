@@ -47,3 +47,5 @@ export type ExclusionPanDTO = GenericExclusionPanDTO<Pan>;
 export type ExclusionDTO = GenericExclusionDTO<Pan>;
 
 export type ExclusionDTOs = Iterable<ExclusionDTO>;
+
+export type Case = Entities.Case<CaseInput, CaseOutput>;
