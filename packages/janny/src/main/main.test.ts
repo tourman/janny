@@ -14,16 +14,21 @@ describe('main', () => {
   it('should save the cases into a TS file', async () => {
     const filePath = `/tmp/${Math.round(Math.random() * 0xffff)}_cases.ts`;
     await unlink(filePath).catch(() => {});
-    const main = new Main({
-      space: (pan) => ({
+    const main = new Main(({ pan, pick }) => ({
+      space: {
         a: pan('aa', 'AA'),
         b: [pan('b0-0', 'b0-1'), pan(0, 1, 2)],
-      }),
+      },
+      exclusions: [
+        {
+          a: pick('aa'),
+        },
+      ],
       filePath,
       type: {
         path: 'main.test',
       },
-    });
+    }));
     await main.prepare();
     expect(existsSync(filePath)).toBe(true);
     // to do: file content

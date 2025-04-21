@@ -2,6 +2,7 @@ export type InnerNestedSpace<P> =
   | number
   | string
   | null
+  | undefined
   | P
   | InnerNestedSpace<P>[]
   | { [key: string]: InnerNestedSpace<P> };
