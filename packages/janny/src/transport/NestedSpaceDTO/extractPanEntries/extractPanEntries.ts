@@ -1,6 +1,7 @@
 import { isObject, range } from 'lodash-es';
 import { type InnerNestedSpace } from 'transport/NestedSpaceDTO/NestedSpaceDTO';
 import { type ExtractPanEntries } from 'transport/NestedSpaceDTO/SpaceConverter';
+import { type ExtractEntries } from 'transport/NestedSpaceDTO/toPanMap';
 
 type Path = (string | number)[];
 
@@ -32,6 +33,7 @@ export function extractPanEntriesFactory<Pan>(
     }
     return entries;
   }
-  const extractPanEntries = extract as ExtractPanEntries<Pan>;
+  const extractPanEntries = extract as ExtractPanEntries<Pan> &
+    ExtractEntries<Pan>;
   return extractPanEntries;
 }
