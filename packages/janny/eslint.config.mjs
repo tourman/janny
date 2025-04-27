@@ -1,5 +1,6 @@
 import { includeIgnoreFile } from '@eslint/compat';
 import pluginJs from '@eslint/js';
+import noRelativeImportPaths from 'eslint-plugin-no-relative-import-paths';
 import globals from 'globals';
 import { resolve } from 'node:path';
 import { dirname } from 'node:path';
@@ -15,6 +16,18 @@ export default [
   { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
+  {
+    files: ['**/*.ts'],
+    plugins: {
+      'no-relative-import-paths': noRelativeImportPaths,
+    },
+    rules: {
+      'no-relative-import-paths/no-relative-import-paths': [
+        'error',
+        { allowSameFolder: true, rootDir: 'src' },
+      ],
+    },
+  },
   {
     rules: {
       '@typescript-eslint/no-namespace': 0,
