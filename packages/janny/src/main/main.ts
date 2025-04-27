@@ -97,7 +97,7 @@ export class Main<
       name: 'jenny',
       parseResult: (result: string) =>
         parseMatrixResultDTO(result, {
-          skipLines: 1,
+          skipLines: 0,
         }),
     });
     const resultToCases = convertToCasesMainFactory({
